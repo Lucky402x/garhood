@@ -50,13 +50,26 @@
   transform: translateX(-50%) translateY(0);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / legacy Edge */
+}
+/* Chrome / Safari / Edge */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
 
 body {
   font-family: var(--font-body);
   background: var(--orange);
   color: var(--black);
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .container {
